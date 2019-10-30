@@ -1137,9 +1137,9 @@ class CompoundFileBinary(object):
             if not isinstance(sector_type, int):
                 continue
 
-            # some files write zero difat instead of FREESECT
-            if sid <= 0:
-                continue
+            # # some files write zero difat instead of FREESECT - UNDOING FOR NOW
+            # if sid <= 0:
+            #     continue
 
             fat_sectors.append(sid)
 
