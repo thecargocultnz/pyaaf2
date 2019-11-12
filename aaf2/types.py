@@ -804,8 +804,11 @@ class TypeDefIndirect(TypeDef):
 
     def decode(self, data):
         typedef = self.decode_typedef(data)
-        result = typedef.decode(data[17:])
-        return result
+        try:
+            result = typedef.decode(data[17:])
+            return result
+        except UnicodeDecodeError:
+            return ""
 
     def encode(self, data, data_typedef=None):
         byte_order = b'\x4c'
