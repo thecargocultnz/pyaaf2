@@ -338,3 +338,6 @@ class CommentMarker(Event):
 class DescriptiveMarker(CommentMarker):
     class_id = AUID("0d010101-0101-4100-060e-2b3402060101")
     __slots__ = ()
+
+    def walk(self, edit_unit=None):
+        yield ()
